@@ -93,3 +93,7 @@ section .text-wrapper input {
 .tateti-wrapper .casillero.jugador2::before{ content: "0"; display: block; }
 .resetgame{display: none;}
 .resetgame.show{display: block;}
+.iconos{ display: flex; gap: 20px; }
+.iconos.disable{ opacity: .3; pointer-events: none; }
+.iconos li{ font-size: 50px; }
+.iconos li.disable{ opacity: .3; pointer-events: none; }

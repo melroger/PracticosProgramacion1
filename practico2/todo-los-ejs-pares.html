@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Practico 2</title>
+</head>
+<body>
+
+    <section>
+        
+        <p>Ejercicio 2</p>
+
+        <div class="ejercicio">
+
+            <input type="number" id="input2" value="0">
+
+            <input type="submit" id="btn2" value="Evaluar">
+            <span id="resultado2"></span>
+           
+        </div>
+
+    </section>
+
+    <section>
+        
+        <p>Ejercicio 4</p>
+
+        <div class="ejercicio">
+
+            <input type="number" id="input4" value="0">
+
+            <input type="submit" id="btn4" value="Evaluar">
+            <span id="resultado4"></span>
+           
+        </div>
+
+    </section>
+
+    <section>
+        
+        <p>Ejercicio 6</p>
+
+        <div class="ejercicio">
+
+            <input type="number" id="input6" value="0">
+
+            <input type="submit" id="btn6" value="Evaluar">
+            <span id="resultado6"></span>
+           
+        </div>
+
+    </section>
+
+    <section>
+        
+        <p>Ejercicio 8</p>
+
+        <div class="ejercicio">
+
+            <input type="number" id="input8" value="0">
+
+            <input type="submit" id="btn8" value="Evaluar">
+            <span id="resultado8"></span>
+           
+        </div>
+
+    </section>
+
+
+    <section>
+        
+        <p>Ejercicio 10</p>
+
+        <div class="ejercicio">
+
+            <input type="number" id="input10numero1" value="0">
+            <input type="number" id="input10numero2" value="0">
+
+            <input type="submit" id="btn10" value="Restar">
+            <span id="resultado10"></span>
+           
+        </div>
+
+    </section>
+
+
+    <section>
+        
+        <p>Ejercicio 12</p>
+
+        <div class="ejercicio">
+
+            <input type="text" id="input12">
+
+            <input type="submit" id="btn12" value="Vocal?">
+            <span id="resultado12"></span>
+           
+        </div>
+
+    </section>
+
+    <section>
+        
+        <p>Ejercicio 14</p>
+
+        <div class="ejercicio">
+            <label>Millas: </label>
+            <input type="number" id="input14" value="0">
+
+            <input type="checkbox" id="checkbox14" name="clientePlus" />
+
+            <input type="submit" id="btn14" value="Calcular">
+            <p>Destino: <span id="resultado14"></span></p>
+           
+        </div>
+
+    </section>
+
+
+    <section>
+        
+        <p>Ejercicio 16</p>
+        <p>Escribir una expresión condicional equivalente, sin la utilización de condicionales if anidados (utilizar un solo if):</p>
+
+        <div class="ejercicio">
+            <label>A</label>
+            <input type="number" id="input16a" value="0">
+            <label>B</label>
+            <input type="number" id="input16b" value="0">
+            <label>C</label>
+            <input type="number" id="input16c" value="0">
+
+            <input type="submit" id="btn16" value="Calcular">
+            <p>A es el mayor de los 3 ? <span id="resultado16"></span></p>
+           
+        </div>
+
+    </section>
+    
+    <section>
+        
+        <p>Ejercicio 18</p>
+        <p>Ingresar seis valores y retornar la suma total del valor absoluto de cada uno. Se deberá procurar que la solución utilice un único botón y un único campo de texto para tomar datos.</p>
+
+        <div class="ejercicio">
+
+            <label>Ingresa 6 valores</label>
+            <input type="number" id="input18" value="0">
+
+            <input type="submit" id="sumar18" value="Agregar Numero">
+
+            <p>valor 1 : <b id="v1"></b></p>
+            <p>valor 2 : <b id="v2"></b></p>
+            <p>valor 3 : <b id="v3"></b></p>
+            <p>valor 4 : <b id="v4"></b></p>
+            <p>valor 5 : <b id="v5"></b></p>
+            <p>valor 6 : <b id="v6"></b></p>
+
+            <input type="submit" id="btn18" value="Calcular" disabled>
+            <p>Sumatoria : <span id="resultado18"></span></p>
+           
+        </div>
+
+    </section>
+
+    <section>
+        
+        <p>Ejercicio 20</p>
+        <p>Para elaborar galletas se necesita 1 taza de azúcar, 100 gr. de harina, 1 cucharada de aceite y una taza de agua. Pedirle al usuario ingreso de cantidad de cada ingrediente disponible e informarle cuantas recetas de galletas podrá elaborar.
+            Se debe tener en cuenta que se podrán hacer tantas recetas como las que permita el ingrediente que esté en menor cantidad.</p>
+
+        <div class="ejercicio">
+
+            <label>Tazas de azúcar</label>
+            <input type="number" id="azucar" value="0">
+
+            <label>Harina (gr)</label>
+            <input type="number" id="harina" value="0">
+
+            <label>Cucharadas de aceite</label>
+            <input type="number" id="aceite" value="0">
+
+            <label>Taza de agua</label>
+            <input type="number" id="agua" value="0">
+
+            <input type="submit" id="btn20" value="Calcular receta">
+            <p>Recetas : <span id="resultado20"></span></p>
+           
+        </div>
+
+    </section>
+
+    <section>
+        
+        <p>Ejercicio 22</p>
+        <p>Una nueva ley descuenta un 4% al total de cada compra si el pago se efectúa con tarjeta de crédito o débito y el monto es inferior a los $10000. Dado un ingreso de total de compra y si es con tarjeta ("si" o "no"), calcular el total final de la compra.
+            Pago de $2000 con tarjeta, costo final -> $ 1920
+            Pago de $12000 con tarjeta, costo final -> $12000
+            Pago de $3000 sin tarjeta, costo final -> $3000</p>
+
+        <div class="ejercicio">
+
+            <input type="number" id="input22" value="0">
+
+            <input type="radio" id="tarjeta22" name="pago22" />
+            <label>tarjeta</label>
+
+            <input type="submit" id="btn22" value="Pagar">
+            <p>Pago: <span id="resultado22"></span></p>
+           
+        </div>
+
+    </section>
+
+    <section>
+        
+        <p>Ejercicio 24</p>
+        <p>Se van ingresando los sueldos de los empleados de una empresa y se quiere:
+            1. Obtener el total de los sueldos a pagar.
+            2. Saber cuántos empleados cobrarán este mes.
+            3. Mostrar el valor del sueldo más bajo</p>
+
+        <div class="ejercicio">
+            <input type="number" id="sueldos" value="0">
+
+            <input type="submit" id="btn24" value="Calcular">
+            <p>Total de los sueldos a pagar: <span id="totalSueldos"></span></p>
+            <p>Cuántos empleados cobrarán este mes: <span id="aCobrar"></span></p>
+            <p>Valor del sueldo más bajo: <span id="suldoMasBajo"></span></p>
+        </div>
+
+    </section>
+
+
+    <section>
+        
+        <p>Ejercicio 26</p>
+        <p>Un hotel termal tiene una promoción. Si el cliente se hospeda por un mínimo de 3 noches, recibe una noche de alojamiento de regalo. Si se hospeda por 7 noches o más recibe dos noches de alojamiento de regalo, pero además si paga con tarjeta de crédito en este último caso se le regala la tercera noche de alojamiento. El costo de cada noche de alojamiento es de $ 40.
+            Dado un ingreso de cantidad de noches a alojarse y medio de pago (e-efectivo, t-tarjeta), indicarle al usuario cuantas noches son las que tiene de regalo, cuantos son los días que se va a poder alojar en total y cuál es el monto final a pagar. Se deben contemplar todos los casos, incluso los que no generan días gratis.
+            Ej.: 9 noches pagadas con tarjeta -> hay a noches de regalo, el usuario se hospeda 12 noches, el costo total son $ 360.</p>
+        <div class="ejercicio">
+            <input type="number" id="noches" value="0">
+
+            <input type="radio" id="efectivo" name="pago" value="efectivo" checked />
+            <label>efectivo</label>
+            <input type="radio" id="tarjeta" name="pago" value="tarjeta" />
+            <label>tarjeta</label>
+
+            <input type="submit" id="btn26" value="Reservar">
+            <p>Noches de regalo: <span id="nochesRegalo"></span></p>
+            <p>Dias de alojamiento: <span id="diasAlojamiento"></span></p>
+            <p>Monto total: <span id="montoTotal"></span></p>
+        </div>
+
+    </section>
+
+
+    <section>
+        
+            <p>Ejercicio 28</p>
+            <p>Programar un sistema que servirá para llevar puntajes en un juego de cartas.Para cada mano se ingresará el puntaje obtenido por cada equipo, siendo dos los equipos que participan del juego.
+
+                En cada mano se debe mostrar en pantalla el puntaje total actualizado de cada equipo. Se seguirán solicitando ingresos de puntajes de los dos equipos hasta que alguno de los equipos totalice 30 puntos o más. En ese momento se deben mostrar los totales finales y deshabilitar el botón de ingreso de datos.</p>
+            <div class="ejercicio">
+                <p>Ronda <span id="nRonda"></span></p>
+                <div>
+                    <p>Equipo 1</p><input type="number" id="equipo1" value="0">
+                </div>
+                <div>
+                    <p>Equipo 2</p><input type="number" id="equipo2" value="0">
+                </div>
+                <p id="resultado"></p>
+
+                <input type="submit" id="btn28" value="Sumar puntos">
+            </div>
+
+    </section>
+
+    <section>
+        <div class="ejercicio29">
+            <p>Ejercicio 29 y 30</p>
+
+            <h2 class="seleccionar-personaje">Selecciona tu personaje<br/> <span class="selecionar-jugador">Jugador 1</span> </h2>
+            <ul class="iconos">
+                <li>&#128520</li>
+                <li>&#128519</li>
+                <li>&#128121</li>
+                <li>&#128125</li>
+                <li>&#128571</li>
+                <li>&#129302</li>
+            </ul>
+
+            <div class="tateti-wrapper">
+                <div class="casillero" id="cas1"></div>
+                <div class="casillero" id="cas2"></div>
+                <div class="casillero" id="cas3"></div>
+                <div class="casillero" id="cas4"></div>
+                <div class="casillero" id="cas5"></div>
+                <div class="casillero" id="cas6"></div>
+                <div class="casillero" id="cas7"></div>
+                <div class="casillero" id="cas8"></div>
+                <div class="casillero" id="cas9"></div>
+            </div>
+            <h1 id="ganador"></h1>
+            <input type="submit" class="resetgame" value="Resetear Juego">
+        </div>
+    </section>
+
+    <script src="./main.js"></script>
+</body>
+</html>

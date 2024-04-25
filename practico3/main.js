@@ -1,3 +1,6 @@
+
+// ejercicio 20
+
 let a = parseInt(2366);
 let b = parseInt(273);
 let r = parseInt(1);
@@ -44,25 +47,48 @@ document.querySelector("#btn19").addEventListener("click", ejercicio19);
         }
         else{
             mesAnterior = parseInt(mes -1);
-        
         }
 
-        let mesDias = mesesTodos[mes];
-        let mesAnteriorDias = mesesTodos[mesAnterior];
+        let mesDias = parseInt(mesesTodos[mes]);
+        let mesAnteriorDias = parseInt(mesesTodos[mesAnterior]);
         
+        let diasMesAntriorCal = [];
+
         if(diaComienzo > 0){
             let primeroDiasPrevios = mesAnteriorDias - diaComienzo;
-
-            for (let i = primeroDiasPrevios; i >= mesAnteriorDias; i++){
-
-                casillero = ´\\\\\´;
-                casillero.innerHTML = i;
-                document.getElementById('calendario').appendChild(casillero);
+            console.log(primeroDiasPrevios + " " + mesAnteriorDias)
+            for (let i = primeroDiasPrevios; i <= mesAnteriorDias; i++){
+                diasMesAntriorCal.push(i);
             }
-        
+         console.log(diasMesAntriorCal);
+        }
+        else{
+            diasMesAntriorCal = [];
         }
 
+        let contador7 = 1;
 
+            for(let a = 0; a < diasMesAntriorCal.length; a++){
+                if(contador7 < 7){
+                    contador7++;
+                    var element = document.createElement("span");
+                    element.classList.add("anterior")
+                    element.innerHTML = diasMesAntriorCal[a];
+                    document.getElementById('calendario').appendChild(element);
+                }
+            }
+
+            for(y = 1; y <= mesDias; y++){
+                var element = document.createElement("span");
+                element.innerHTML = y;
+                document.getElementById('calendario').appendChild(element);
+                contador7++;
+                if(contador7 === 7){
+                    var br = document.createElement("br");
+                    document.getElementById('calendario').appendChild(br);
+                    contador7 = 1;
+                }   
+            }
     }
 
 

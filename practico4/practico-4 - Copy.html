@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Parcial 1</title>
+    <style>
+    </style>
+</head>
+<body>
+
+    <input type="text" id="nombre">
+    <input type="number" id="ci">
+    <input type="number" id="monto">
+
+    <button id="agregarDonaciones">Agregar Donaciones</button>
+    <p id="estadisticas"></p>
+    <p id="donaciones"></p>
+    <p id="error"></p>
+           
+<script>
+    document.querySelector("#agregarDonaciones").addEventListener("click", agregarDonaciones);
+
+    let contador = parseInt(0);
+    let listaDonaciones = "";
+    let promedio = parseInt(0);
+    let sumatoria = parseInt(0);
+
+    let donacionMaxima = parseInt(0);
+    let donacionMaximaNombre = "";    
+
+    function agregarDonaciones(){
+
+        let nombre = String(document.querySelector("#nombre").value.trim());
+        let ci = document.querySelector("#ci").value.trim();
+        let donacion = parseInt(document.querySelector("#monto").value);
+
+        
+        // buscar espacio 
+        function buscarLetra(text, letra) {
+            for (let i = 0; i < text.length; i++) {
+                if (text[i] === letra) {
+                    return i;
+                }
+            }
+        }
+        let espacio = buscarLetra(nombre, " ");
+
+        console.log(espacio);
+
+        //lista de donates
+        function lista(){
+            contador ++;
+            listaDonaciones = listaDonaciones + `${String(contador)} - ${nombre} - ${String(ci)} - $ ${String(donacion)} <br/>`;
+            return listaDonaciones
+        }
+
+        //funcion promedio
+        function estadisticas(){
+            sumatoria += donacion;
+            let estadistica = sumatoria/contador;
+            return estadistica
+        }
+
+        //maximo donante
+        function maximoDonante(){
+            if( donacionMaxima <= donacion ){
+                donacionMaxima = donacion;
+                donacionMaximaNombre = nombre;
+                return `Maximo donante ${donacionMaximaNombre} - $ ${donacionMaxima}`;
+            }
+        }
+        
+        if ( nombre.length > 2 && 
+            nombre.length < 40 &&
+            nombre[espacio] === " " && 
+            ci !== "" &&
+            donacion > 0 &&
+            nombre[0].toLocaleUpperCase() === nombre[0] && 
+            nombre[espacio + 1].toLocaleUpperCase() === nombre[espacio + 1] ){
+                document.querySelector("#donaciones").innerHTML = lista();
+                document.querySelector("#estadisticas").innerHTML = `Promedio de donaciones ${estadisticas()} <br/> ${maximoDonante()}`;
+            }else{
+            document.querySelector("#error").innerHTML = "Error";
+        }
+
+    }
+</script>
+</body>
+</html>

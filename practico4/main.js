@@ -178,26 +178,62 @@ document.querySelector("#btnS16").addEventListener("click", ejercicioS16);
     }
 
 
+//  FUNCIONES
+
+// Ejercicio 2
+document.querySelector("#f2btn").addEventListener("click", ejercicioF2);
+
+function ejercicioF2() {
+    let f2anio = parseInt(document.querySelector("#f2anio").value);   
+    document.querySelector("#resultadoF2").innerHTML = esBisiesto(f2anio); 
+}
+
+// Ejercicio 4
+document.querySelector("#f4btn").addEventListener("click", ejercicioF4);
+
+function ejercicioF4() {
+    let f4temp = parseInt(document.querySelector("#f4temp").value);   
+    document.querySelector("#resultadoF4").innerHTML = f4(f4temp); 
+}
+
+
+// Ejercicio 6
+document.querySelector("#f6btn").addEventListener("click", ejercicioF6);
+
+function ejercicioF6() {
+    let f6base = parseInt(document.querySelector("#f6base").value);
+    let f6exponente = parseInt(document.querySelector("#f6exponente").value);  
+    document.querySelector("#resultadoF6").innerHTML = f6(f6base, f6exponente); 
+}
+
+// Ejercicio 8
+document.querySelector("#f8btn").addEventListener("click", ejercicioF8);
+
+function ejercicioF8() {
+    let f8sueldo = parseInt(document.querySelector("#f8sueldo").value);
+    let f8hijos = parseInt(document.querySelector("#hijos").value);  
+    document.querySelector("#resultadoF8").innerHTML = f8(f8sueldo, f8hijos); 
+}
+
 
 // Ejercicio 10 funciones
 
 document.querySelector("#btnF10").addEventListener("click", ejercicioF10);
 
 function ejercicioF10() {
-    let horas = document.querySelector("#horas").value;
-    let materiales = document.querySelector("#materiales").value;
+    let horas = parseInt(document.querySelector("#horas").value); 
+    let dias = parseInt(document.querySelector("#dias").value);
+    let materiales = parseInt(document.querySelector("#materiales").value); 
+    let asistente = document.querySelector("#asistente").value; 
+    let empleado = document.querySelector("#empleado").value; 
 
+    console.log(salarioEmpleado(dias, horas, empleado))
 
-    /////////////// esto evalua si es un numero y ademas positivo
-    function esNumero(valor){
-        if(!isNaN(valor) && valor >= 0) {
-            return true
-        }else{
-            return false
-        }
+    if(esNumero(horas) && esNumero(dias) && esNumero(materiales)){
+        document.querySelector("#resultadoF10").innerHTML = "$ " + costo(dias, horas, materiales, asistente);
+        document.querySelector("#resultadoF10salario").innerHTML = salarioEmpleado(dias, horas, empleado);
+
+    }else{
+        alert("completar los valores")
     }
-    let valorNumricoHoras = esNumero(horas);
-    let valorNumricoMateriales = esNumero(materiales);
-    console.log("valorNumricoHoras: " + valorNumricoHoras + " valorNumricoMateriales: " + valorNumricoMateriales);
-    
 }

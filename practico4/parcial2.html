@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Parcial 1</title>
+    <style>
+    </style>
+</head>
+<body>
+	<input type="text" id="txtBanda" placeholder="Banda">
+	<select id="selctSala">
+		<option>Polar</option>
+		<option>Panda</option>
+		<option>Pardo</option>
+	</select>
+	<input type="number" id="nHoras"   placeholder="horas">
+	<button id="btn">calcular</button>
+	
+	<p id="mensaje"></p>
+	
+	<p id="total"></p>
+
+<script>
+
+// funciones 
+
+function pago(texto, caracter, palabra, horas, sala ){
+
+	if( buscarCaracter(texto, caracter) >= 2 ){
+
+		return horas*380 - horas*380*0.45 - salaPardo(sala)
+	}
+	else if( buscarPalabra( texto, palabra ) >= 0 ){
+
+		return horas*380 - horas*380*0.35 - salaPardo(sala)
+	}else if( horas > 3 ){
+
+		return horas*380 - horas*380*0.20 - salaPardo(sala)
+	}else{
+
+		return horas*380 -salaPardo(sala)
+	}
+}
+
+function buscarCaracter(texto, caracter){
+
+	let caracterContador = parseInt(0);
+
+	for( let i = 0; i < texto.length; i ++ ){
+		if( texto[i] === "o" ){
+			caracterContador ++;
+		}
+	}
+	return caracterContador;
+}
+
+
+function buscarPalabra( texto, palabra ){
+	return texto.toUpperCase().indexOf(palabra.toUpperCase());
+}
+
+function salaPardo(sala){
+	if( sala === "Pardo" ){
+		return 200
+	}else{
+		return 0
+	}
+}
+
+document.querySelector("#btn").addEventListener("click", calcular);
+
+let dineroTotalOso = parseInt(0);
+
+function calcular(){
+	let banda = String(document.querySelector("#txtBanda").value.trim());
+	let sala = String(document.querySelector("#selctSala").value);
+	let horas = parseInt(document.querySelector("#nHoras").value);
+	
+	if( banda.length > 0 && horas > 0 && horas < 12){
+
+		document.querySelector("#mensaje").innerHTML = `Pago de banda: $ ${pago(banda, "o", "panda", horas, sala )}`;
+		
+		dineroTotalOso += pago(banda, "o", "panda", horas, sala );
+
+		document.querySelector("#total").innerHTML = dineroTotalOso
+
+	}else{
+		alert("Error en los campos :( ")
+	}
+}
+
+</script>
+</body>
+</html>

@@ -20,6 +20,15 @@
     <p id="error"></p>
            
 <script>
+        // buscar espacio 
+        function buscarLetra(text, letra) {
+            for (let i = 0; i < text.length; i++) {
+                if (text[i] === letra) {
+                    return i;
+                }
+            }
+        }
+    console.log(buscarLetra("melanie roger", " "))
     document.querySelector("#agregarDonaciones").addEventListener("click", agregarDonaciones);
 
     let contador = parseInt(0);
@@ -37,15 +46,10 @@
         let donacion = parseInt(document.querySelector("#monto").value);
 
         
-        // buscar espacio 
-        function buscarLetra(text, letra) {
-            for (let i = 0; i < text.length; i++) {
-                if (text[i] === letra) {
-                    return i;
-                }
-            }
-        }
+
         let espacio = buscarLetra(nombre, " ");
+
+        
 
         console.log(espacio);
 

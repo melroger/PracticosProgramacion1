@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Parcial 1</title>
+    <style>
+    </style>
+</head>
+<body>
+    <input type="text" id="txtNameApe">
+    <input type="number" id="nAlquiler">
+    <select id="selctPago">
+        <option>mensual</option>
+        <option>trimestral</option>
+        <option>semestral</option>
+    </select>
+    
+    <button id="btn">boton</button>
+    
+    <p id="listaInquilinos"></p>
+           
+<script>
+// hoja de funciones
+
+function esNumero(valor){
+	if( !isNaN(valor) && valor > 0 ){
+		return true
+	}else{
+		return false
+	}
+}
+
+function buscarCaracter(texto, caracter){
+	for( let i = 0; i < texto.length; i ++ ){
+		if( texto[i] === caracter ){
+			return i
+		}
+	}
+    return -1
+}
+
+function buscarA(texto, caracter){
+	conterA = 0;
+	for( let i = 0; i < texto.length; i ++ ){
+		if( texto[i] === caracter || texto[i].toUpperCase() === caracter){
+			conterA ++
+		}	
+	}
+	return conterA ++
+}
+
+function formaPago(selctPago, alquiler, nombApe){
+	
+	switch(selctPago){
+		case "mensual":
+            if( buscarA(nombApe, "a") >= 2 ){
+                return alquiler - alquiler*0.01
+            }else{
+                return alquiler
+            }
+        break;
+		case "trimestral":
+		return alquiler - alquiler*0.05;
+
+		case "semestral":
+		return alquiler - alquiler*0.20
+		
+	}
+
+}
+
+document.querySelector("#btn").addEventListener("click", calcular);
+let listaInquilinos = "";
+let contador = parseInt(0);
+
+function calcular(){
+	let nombApe = String(document.querySelector("#txtNameApe").value.trim());
+	let alquiler = parseInt(document.querySelector("#nAlquiler").value);
+	let pago = String(document.querySelector("#selctPago").value);
+
+	let espacio = buscarCaracter(nombApe, " ");
+	let conterA = parseInt(0);
+
+	
+	if( esNumero(alquiler) && nombApe.length >= 7 && nombApe.length <= 70 && espacio >= 0 && nombApe[0] === nombApe[0].toUpperCase() && nombApe[espacio + 1] === nombApe[espacio + 1].toUpperCase()){
+		contador++;
+		listaInquilinos += `${nombApe}. Equivalente mensual: $ ${formaPago(pago, alquiler, nombApe)}. Calculo numero ${contador} <br/>`;
+		document.querySelector("#listaInquilinos").innerHTML = 	listaInquilinos;
+	}else{
+		alert("Error en los campos :( ")
+	}
+}
+</script>
+</body>
+</html>
